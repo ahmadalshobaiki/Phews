@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LoginHeader.Master.cs" Inherits="Phews.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <!-- META tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- bootstrap.js -->
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <asp:ContentPlaceHolder ID="head1" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: #085394;">
+
+                <!-- 2 column grid 4/auto-->
+                <div class="col-4">
+                    <a href="signup.aspx" class="navbar-brand" style="font-size: xx-large; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: #FFE599;">
+                        <img src="img/eercast2.jpg" height="60" width="60" />PHEWS</a>
+                </div>
+
+
+                <!-- toggle button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#new_target"><span class="navbar-toggler-icon"></span></button>
+
+
+                <!-- toggle button target -->
+                <div id="new_target" class="col-auto align-self-end collapse navbar-collapse form-inline justify-content-end">
+
+
+                    <ul class="navbar-nav">
+                        <li>
+                            <label for="txtUsername" class="sr-only">Username</label>
+                            <asp:TextBox runat="server" ID="txtUsername" CssClass="form-control form-control-sm m-2" placeholder="Enter Username" />
+                            
+                        </li>
+                        <li>
+                            <label for="txtPassword" class="sr-only">Password</label>
+                            <asp:TextBox runat="server" ID="txtPassword" TextMode="Password" CssClass="form-control  form-control-sm m-2" placeholder="Enter password" />
+                        </li>
+                        <li>
+                            <asp:Button ID="login" runat="server" CssClass="btn btn-success ml-1" Text="Login" OnClick="LoginClicked" />
+                        </li>
+
+                    </ul>
+                    <div class="col-8 text-center">
+                        
+                        <a href="forgotpassword.aspx" style="color: white;">Forgot your password?</a>
+                    </div>
+
+                    <div class="col-8 text-center">
+                        <asp:Label ID="error_msg" runat="server" for="txtUsername" style="visibility:hidden; color:#ff0000;"  />
+                    </div>
+                    
+                </div>
+
+            </nav>
+
+            <!---------------------------------------------- navbar end ------------------------------------------->
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
